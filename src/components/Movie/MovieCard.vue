@@ -1,5 +1,5 @@
 <template>
-    <div class="card shadow-xl rounded-[14px] h-auto w-60 p-[1px] bg-[#000] text-white">
+    <div class="card shadow-xl rounded-[14px] h-auto w-60 p-[1px] bg-[#000] text-white w-full">
         <div class="bg-[#000] rounded-[14px] p-2">
             <div class="h-40 bg-white rounded-[10px]">
                 <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="60">
