@@ -1,8 +1,20 @@
-<script setup>
+
+<script>
+import MovieGrid from "../components/Movie/MovieGrid.vue"
+export default {
+    components: {
+        MovieGrid
+    },
+
+
+}
+
 </script>
 
 <template>
   <main>
-    <h1>Admin dashboard</h1>
+    <div class="w-full">
+    <MovieGrid />
+    </div>
   </main>
 </template>

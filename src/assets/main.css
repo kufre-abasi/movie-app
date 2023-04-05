@@ -11,12 +11,23 @@
 
   font-weight: normal;
 }
-
+body{
+  /* background-color: #28231D; */
+  background-color: #100C08;
+  /* background-color: #040200; */
+  /* background-color: #28231D; */
+}
 a,
 .green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
+}
+.card{
+  background: linear-gradient(180.2deg, #173045 69.99%, rgba(12, 176, 242, .8) 91.98%);
+    transition: opacity .15s;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, .25);
+  
 }
 
 @media (hover: hover) {
@@ -25,15 +36,87 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+.logo {
+  animation: Color 2s linear infinite;
+  -webkit-animation: Color 4s ease-in-out infinite;
+  text-decoration:line-through;
+  font-weight: 700;
+}
+
+@keyframes Color {
+  0% {
+    color: #A0D468;
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  20% {
+    color: #4FC1E9;
+  }
+
+  40% {
+    color: #FFCE54;
+  }
+
+  60% {
+    color: #FC6E51;
+  }
+
+  80% {
+    color: #ED5565;
+  }
+
+  100% {
+    color: #AC92EC;
+  }
+}
+
+@-moz-keyframes Color {
+  0% {
+    color: #A0D468;
+  }
+
+  20% {
+    color: #4FC1E9;
+  }
+
+  40% {
+    color: #FFCE54;
+  }
+
+  60% {
+    color: #FC6E51;
+  }
+
+  80% {
+    color: #ED5565;
+  }
+
+  100% {
+    color: #AC92EC;
+  }
+}
+
+@-webkit-keyframes Color {
+  0% {
+    color: #A0D468;
+  }
+
+  20% {
+    color: #4FC1E9;
+  }
+
+  40% {
+    color: #FFCE54;
+  }
+
+  60% {
+    color: #FC6E51;
+  }
+
+  80% {
+    color: #ED5565;
+  }
+
+  100% {
+    color: #AC92EC;
   }
 }
