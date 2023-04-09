@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lg:mt-12 mt-6 text-white">
     single movie page
   </div>
 </template>
