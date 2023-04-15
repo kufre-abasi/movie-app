@@ -15,24 +15,29 @@ export default {
       };
     },
 methods:{
-    handleSearch(query){
-      this.movies=[];
-     fetch('https://www.omdbapi.com/?t='+ query + '&apikey=9d0245bc')
-    .then((res) => { return res.json() } )
-    .then((res) =>{ 
-      this.movies=res;
-      console.log(this.movies.Error)
-      console.log(this.movies)
-      this.query = ''
-      this.hide = true
-    })
-  .catch((error) => {
-      console.log(error);
-      this.query = ''
-      this.hide = true
-    });
+  handleSearch(query) {
+    if (this.query === '') {
+      this.hide = this.hide;
     }
-    },
+    else {
+    this.movies = [];
+    fetch('https://www.omdbapi.com/?t=' + query + '&apikey=9d0245bc')
+      .then((res) => { return res.json() })
+      .then((res) => {
+        this.movies = res;
+        console.log(this.movies.Error)
+        console.log(this.movies)
+        this.query = ''
+        this.hide = true
+      })
+      .catch((error) => {
+        console.log(error)
+        this.query = ''
+        this.hide = true
+      });
+    }
+  }
+},
   // created(){
   //       fetch('https://www.omdbapi.com/?t=Pirates%20of%20Silicon%20Valley&apikey=9d0245bc' )
   //       .then((res) => { return res.json() } )
