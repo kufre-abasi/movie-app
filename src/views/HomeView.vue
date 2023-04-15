@@ -10,7 +10,8 @@ export default {
      data() {
       return {
         query: '',
-        movies: []
+        movies: [],
+        hide: false,
       };
     },
 methods:{
@@ -23,25 +24,27 @@ methods:{
       console.log(this.movies.Error)
       console.log(this.movies)
       this.query = ''
+      this.hide = true
     })
   .catch((error) => {
       console.log(error);
       this.query = ''
+      this.hide = true
     });
     }
     },
-    created(){
-        fetch('https://www.omdbapi.com/?t=Pirates%20of%20Silicon%20Valley&apikey=9d0245bc' )
-        .then((res) => { return res.json() } )
-        .then((res) =>{ 
-          this.movies=res;
-          console.log(this.movies.Error)
-          console.log(this.movies)
-        })
-        .catch((error) => {
-          console.log(error);
-    });
-    }
+  // created(){
+  //       fetch('https://www.omdbapi.com/?t=Pirates%20of%20Silicon%20Valley&apikey=9d0245bc' )
+  //       .then((res) => { return res.json() } )
+  //       .then((res) =>{ 
+  //         this.movies=res;
+  //         console.log(this.movies.Error)
+  //         console.log(this.movies)
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //   });
+  //   }
 
 }
 
@@ -59,6 +62,7 @@ methods:{
         <button class="lg:p-4 p-2 bg-[#173045] rounded-r-[20px] [#fff]" @click="handleSearch(query)">Search</button>
       </div>
         <MovieCard 
+        v-if="hide"
         class="center justify-center mx-auto"
         :title="movies.Title" 
         :image="movies.Poster" 
