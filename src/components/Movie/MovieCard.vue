@@ -3,7 +3,7 @@
         <div class=" bg-transparent rounded-[14px] p-2">
             <div class="lg:flex  justify-between gap-4">
                 <img :src="image" :alt="slug" width="" class="rounded-[14px] lg:w-[120px] w-full">
-                <div class="">
+                <div class="text-gray-900">
                     <strong class="text-[17px]">{{title}}</strong>
                     <span>({{ year }})</span>
                     <div>{{ genre }}</div>
