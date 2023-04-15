@@ -61,7 +61,6 @@ methods:{
       :slug="movies.Title + ' poster'" 
       :year="movies.Year" 
       :genre="movies.Genre"
-      :ratings="movies.Ratings"
        />
     </div>
   </main>

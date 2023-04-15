@@ -7,11 +7,11 @@
                     <strong class="text-[17px]">{{title}}</strong>
                     <span>({{ year }})</span>
                     <div>{{ genre }}</div>
-                    <div v-for="rate in ratings" :key="rate">
+                    <!-- <div v-for="rate in ratings" :key="rate">
                         <span>
                         {{ rate }}
                         </span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- <div class=" pt-10 justify ">
@@ -38,10 +38,10 @@ export default defineComponent({
     //   type: String,
     //   required: true
     // },
-    ratings: {
-      type: String,
-      required: true
-    },
+    // ratings: {
+    //   type: String,
+    //   required: true
+    // },
     image: {
       type: String,
       required: true
