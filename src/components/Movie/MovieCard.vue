@@ -1,9 +1,9 @@
 <template>
-    <div  class="card drop-shadow-lg rounded-[14px]  lg:w-80 p-[1px] bg-gray-200 text-[#000] text-white">
+    <div  class="card drop-shadow-2xl shadow-2xl border-[1px] border-gray-800 rounded-[14px]  lg:w-auto p-[1px] bg-transparent text-gray-400">
         <div class=" bg-transparent rounded-[14px] p-2">
             <div class="lg:flex  justify-between gap-4">
                 <img :src="image" :alt="slug" width="" class="rounded-[14px] lg:w-[120px] w-full">
-                <div class="text-gray-900 lg:pt-0 py-6 pb-2">
+                <div class=" lg:pt-0 py-6 pb-2">
                     <strong class="text-[17px]">{{title}}</strong>
                     <span>({{ year }})</span>
                     <p class="mb-4">{{ genre }}</p>
