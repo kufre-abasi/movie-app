@@ -6,13 +6,14 @@
 
 #app {
   font-weight: normal;
-}
+  min-height: 100vh;}
 body{
-  background-color: #28231D;
+  /* background-color: #28231D; */
   /* background-color: #100C08; */
   /* background-color: #040200; */
   /* background-color: #28231D; */
   @apply bg-gray-900;
+  
 }
 a,
 .green {
