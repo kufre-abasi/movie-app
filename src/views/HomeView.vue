@@ -1,29 +1,27 @@
 
 <script>
-import MovieGrid from "../components/Movie/MovieGrid.vue"
+import MovieCard from "../components/Movie/MovieCard.vue"
 // import axios from 'axios';
-// import { API_KEY } from '../service/api.js';
 
 export default {
     components: {
-        MovieGrid
+        MovieCard
   },
      data() {
       return {
         query: '',
-        movies: [],
-        films: []
+        movies: []
       };
     },
 methods:{
     handleSearch(query){
-      this.films=[];
+      this.movies=[];
      fetch('http://www.omdbapi.com/?t='+ query + '&apikey=9d0245bc')
   .then((res) => { return res.json() } )
   .then((res) =>{ 
-    this.films=res;
-    console.log(this.films.Error)
-      console.log(this.films)
+    this.movies=res;
+    console.log(this.movies.Error)
+      console.log(this.movies)
 
   })
   .catch((error) => {
@@ -35,12 +33,12 @@ methods:{
         fetch('http://www.omdbapi.com/?t=Fast&apikey=9d0245bc' )
         .then((res) => { return res.json() } )
         .then((res) =>{ 
-          this.films=res;
-          console.log(this.films.Error)
-        console.log(this.films)
+          this.movies=res;
+          console.log(this.movies.Error)
+          console.log(this.movies)
         })
         .catch((error) => {
-      console.log(error);
+          console.log(error);
     });
     }
 
@@ -50,20 +48,20 @@ methods:{
 
 <template>
   <main>
-    <div class="w-full">
-      <div>
-<div>
-    <input class=" bg-gray-300 text-[#000] w-full p-4 " type="text" v-model="query">
-    <button class="p-4 bg-brand" @click="handleSearch(query)">Search</button>
-    <ul>
-      <h2>{{ films.Title }} ({{ films.Year }})</h2>
-      <p>{{ films.Plot }}</p>
-    </ul>
-   <img v-if="films.Poster && films.Poster !== 'N/A'" :src="films.Poster" :alt="films.Title + ' poster'" />
-    <p class="text-white">{{ query }}</p>
-  </div>
+    <div class=" ">
+      <div class="flex mx-auto center justify-center mb-10">
+        <input class=" border-[#173045] border-[2px] bg-gray-900 text-[#fff] rounded-l-[20px] lg:w-[50%] lg:p-4 p-2 outline-none " type="text" v-model="query">
+        <button class="lg:p-4 p-2 bg-[#173045] rounded-r-[20px] [#fff]" @click="handleSearch(query)">Search</button>
       </div>
-    <MovieGrid />
+      <MovieCard 
+      :title="movies.Title" 
+      :image="movies.Poster" 
+      :plot="movies.Plot" 
+      :slug="movies.Title + ' poster'" 
+      :year="movies.Year" 
+      :genre="movies.Genre"
+      :ratings="movies.Ratings"
+       />
     </div>
   </main>
 </template>
