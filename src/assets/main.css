@@ -5,17 +5,14 @@
 
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
   font-weight: normal;
 }
 body{
-  /* background-color: #28231D; */
-  background-color: #100C08;
+  background-color: #28231D;
+  /* background-color: #100C08; */
   /* background-color: #040200; */
   /* background-color: #28231D; */
+  @apply bg-gray-900;
 }
 a,
 .green {
@@ -23,11 +20,11 @@ a,
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
 }
+.linear_gradient{
+  background: linear-gradient(180.2deg, #173045 69.99%, rgba(12, 176, 242, .8) 91.98%);}
 .card{
-  background: linear-gradient(180.2deg, #173045 69.99%, rgba(12, 176, 242, .8) 91.98%);
     transition: opacity .15s;
     box-shadow: 0 14px 20px rgba(0, 0, 0, .25);
-  
 }
 
 @media (hover: hover) {
@@ -39,7 +36,6 @@ a,
 .logo {
   animation: Color 2s linear infinite;
   -webkit-animation: Color 4s ease-in-out infinite;
-  text-decoration:line-through;
   font-weight: 700;
 }
 
