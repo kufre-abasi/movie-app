@@ -117,3 +117,17 @@ a,
     color: #AC92EC;
   }
 }
+ /* the scrollbar for chrome and other webkit browsers */
+ ::-webkit-scrollbar {
+   width: 0.3vw;
+   cursor: pointer;
+   /* display: none;  */
+ }
+
+ ::-webkit-scrollbar-track {
+   background-color: transparent;
+ }
+
+ ::-webkit-scrollbar-thumb {
+   @apply bg-brand;
+ }
