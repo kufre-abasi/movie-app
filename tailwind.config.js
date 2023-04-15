@@ -14,7 +14,7 @@ module.exports = {
           text: "#333333",
           pink: "#DD4A6B",
         },
-        brand: "#2C2B6C",
+        brand: "#066ddb",
         secondary: {
           main: "#00AFEF8A",
         },
