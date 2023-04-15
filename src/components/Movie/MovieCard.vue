@@ -1,26 +1,20 @@
 <template>
-    <div class="card drop-shadow-lg rounded-[14px] lg:w-80 p-[1px] bg-gray-200 text-[#000] text-white">
+    <div  class="card drop-shadow-lg rounded-[14px]  lg:w-80 p-[1px] bg-gray-200 text-[#000] text-white">
         <div class=" bg-transparent rounded-[14px] p-2">
             <div class="lg:flex  justify-between gap-4">
                 <img :src="image" :alt="slug" width="" class="rounded-[14px] lg:w-[120px] w-full">
-                <div class="text-gray-900">
+                <div class="text-gray-900 lg:pt-0 py-6 pb-2">
                     <strong class="text-[17px]">{{title}}</strong>
                     <span>({{ year }})</span>
-                    <div>{{ genre }}</div>
+                    <p class="mb-4">{{ genre }}</p>
                     <!-- <div v-for="rate in ratings" :key="rate">
                         <span>
                         {{ rate }}
                         </span>
                     </div> -->
+                <!-- <router-link class="bg-brand p-2 px-4 text-white rounded mt-4" :to="{ name: 'single-movie', params: {id: movieId } }">Read More</router-link> -->
                 </div>
             </div>
-            <!-- <div class=" pt-10 justify ">
-                <div class="flex gap-2 mb-2">
-                    <strong class="text-[17px]">{{title}}</strong>
-                    <span>({{ year }})</span>
-                </div>
-                <p class="text-[14px]">{{ plot }}</p>
-            </div> -->
         </div>
     </div>
 </template>
@@ -61,7 +55,12 @@ export default defineComponent({
     // released: {
     //  type: String,
     //  required: true
-    // }
+    // },
+    movieId: {
+      type: String,
+      required: true
+    },
+
   },
   setup(props) {
     return {

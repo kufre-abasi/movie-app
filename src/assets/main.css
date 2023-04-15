@@ -15,12 +15,6 @@ body{
   @apply bg-gray-900;
   
 }
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
 .linear_gradient{
   background: linear-gradient(180.2deg, #173045 69.99%, rgba(12, 176, 242, .8) 91.98%);}
 .card{
@@ -28,11 +22,6 @@ a,
     box-shadow: 0 14px 20px rgba(0, 0, 0, .25);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
 
 .logo {
   animation: Color 2s linear infinite;
