@@ -1,5 +1,5 @@
 <template>
-    <div class="card drop-shadow-lg rounded-[14px] w-80 p-[1px] bg-gray-200 text-[#000] text-white">
+    <div class="card drop-shadow-lg rounded-[14px] lg:w-80 p-[1px] bg-gray-200 text-[#000] text-white">
         <div class=" bg-transparent rounded-[14px] p-2">
             <div class="lg:flex  justify-between gap-4">
                 <img :src="image" :alt="slug" width="" class="rounded-[14px] lg:w-[120px] w-full">
