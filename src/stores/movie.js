@@ -1,40 +1,77 @@
-import { defineStore } from "pinia";
-// import global from '../Helper'
+import { defineStore } from 'pinia';
+import axios from 'axios';
 
 export const useStore = defineStore({
-  id: "movies",
+  id: "movieStore",
   state: () => ({
-    movie: [],
+    query: "",
+    movies: [],
+    hide: false,
+    selectedGenre: "",
+    sortOrder: "title",
   }),
-  getters: {
-      doubleCount: (state) => state.counter * 2,
-      getMovie() {
-          
-      }
-    // getToken() {
-    //   if (this.user) {
-    //     let user = global.decrypt(this.user, import.meta.env.VITE_ENCRYPT_KEY);
-    //     return user.token;
-    //   }
-    // },
-
-    // getUser() {
-    //   if (this.user) {
-    //     let user = global.decrypt(this.user, import.meta.env.VITE_ENCRYPT_KEY);
-    //     return user.user;
-    //   }
-    // },
-  },
   actions: {
-    increment() {
-      this.counter++;
+    async handleSearch() {
+      if (this.query === "") {
+        alert('Please enter a movie title to search.');
+        return;
+      }
+      try {
+        const response = await axios.get('https://www.omdbapi.com/', {
+          params: {
+            s: this.query,
+            apikey: "9d0245bc",
+          },
+        });
+        this.movies = response.data.Search || [];
+        console.log(this.movies);
+        this.hide = this.movies.length === 1;
+      } catch (error) {
+        console.error(error);
+        this.movies = [];
+        this.hide = true;
+      }
+      this.query = "";
+      this.selectedGenre = "";
     },
-    // saveUserToken(user) {
-    //   this.user = global.encrypt(
-    //     JSON.stringify(user),
-    //     import.meta.env.VITE_ENCRYPT_KEY
-    //   );
-    // },
+    sortMovies() {
+      switch (this.sortOrder) {
+        case "title":
+          this.movies.sort((a, b) => a.Title.localeCompare(b.Title));
+          break;
+        case "year":
+          this.movies.sort((a, b) => b.Year - a.Year);
+          break;
+        case "rating":
+          this.movies.sort((a, b) => b.Rating - a.Rating);
+          break;
+        default:
+          break;
+      }
+    }
   },
-  persist: true,
+  getters: {
+    filteredMovies() {
+      if (this.selectedGenre === "") {
+        return this.movies;
+      }
+      return this.movies.filter((movie) => movie.Genre && movie.Genre.includes(this.selectedGenre));
+    },
+    genres() {
+      const genres = new Set();
+      this.movies.forEach((movie) => {
+        if (movie.Genre) {
+          movie.Genre.split(', ').forEach((genre) => {
+            genres.add(genre);
+          });
+        }
+      });
+      return Array.from(genres).sort();
+    },
+    sortedMovies() {
+      const sortedMovies = [...this.filteredMovies];
+      this.sortMovies(sortedMovies);
+      return sortedMovies;
+    },
+  },
 });
