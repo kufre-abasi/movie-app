@@ -15,7 +15,7 @@ const store = useStore();
     class="mt-16 py-4 mb-6 w-full bg-gray-800 shadow md:block "
   >
     <div class="lg:px-14 px-4 my-0 min-h-[70px] flex items-center">
-      <form class=" flex flex-col gap-4 items-center md:flex-row w-full">
+      <div class=" flex flex-col gap-4 items-center md:flex-row w-full">
         <div class="mr-4 text-[#fff] whitespace-nowrap">Find a Movie</div>
         <input 
         class=" border-gray-800 border-[2px] bg-gray-900 rounded-md text-[#fff] h-10 w-full p-4 py-5 outline-none " 
@@ -67,9 +67,12 @@ const store = useStore();
         <button
           class="flex items-center justify-center appearance-none font-medium text-center rounded-md text-base py-3 lg:py-2 px-6 border-[1px] border-brand text-white w-full lg:w-1/2"
          type="reset">Reset</button>
-      </form>
+      </div>
     </div>
   </div>
+      <div class="flex mx-auto center hidden justify-center mb-12">
+        <span>No movie found</span>
+      </div>
       <div v-if="store.isloading" class="flex mx-auto center  justify-center mt-10">
               <fingerprint-spinner
           :animation-duration="1500"
