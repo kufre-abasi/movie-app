@@ -2,6 +2,7 @@
 <script setup>
 import MovieCard from "@/components/Movie/MovieCard.vue";
 import { useStore } from "../stores/movie";
+import { FingerprintSpinner, LoopingRhombusesSpinner } from 'epic-spinners';
 
 const store = useStore();
 
@@ -52,21 +53,26 @@ const store = useStore();
           @click="store.handleSearch()"
           class="flex items-center justify-center appearance-none font-medium text-center rounded-md text-base py-3 lg:py-2 px-6 bg-brand text-white w-full lg:w-1/2"
         >
+        <span v-if="store.isloading">
+          <looping-rhombuses-spinner
+            :animation-duration="2500"
+            :rhombus-size="15"
+            color="#ffffff"
+          />        
+        </span>
+        <span v-else>
           Search
+        </span>
         </button>
       </div>
     </div>
   </div>
-      <div class="flex mx-auto center hidden justify-center mb-12">
-        <!-- <label for="sort-by">Sort by:</label> -->
-        <!-- <select 
-          class="border border-gray-900 w-[20%] p-2 bg-gray-800 rounded" 
-        id="sort-by" v-model="store.sortOrder">
-          <option value="title">Title</option>
-          <option value="year">Release year</option>
-          <option value="rating">Rating</option>
-        </select> -->
-
+      <div v-if="store.isloading" class="flex mx-auto center  justify-center mt-10">
+              <fingerprint-spinner
+          :animation-duration="1500"
+          :size="64"
+          color="#066ddb"
+        />
       </div>
       <div 
           v-if="!store.hide"

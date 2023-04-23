@@ -399,6 +399,11 @@ electron-to-chromium@^1.4.284:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.348.tgz#f49379dc212d79f39112dd026f53e371279e433d"
   integrity sha512-gM7TdwuG3amns/1rlgxMbeeyNoBFPa+4Uu0c7FeROWh4qWmvSOnvcslKmWy51ggLKZ2n/F/4i2HJ+PVNxH9uCQ==
 
+epic-spinners@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/epic-spinners/-/epic-spinners-2.0.0.tgz#47be27c1b6007ccd4e30cf3bc6a8b5f1ca230e4a"
+  integrity sha512-nU7xF7NoXrObmIGdXYwj1hfE3EH3jDVQ8oi1S5wG0yutrQILMJ3Xs0ZQEdGIjBQnFveDrAs/61m8/vm5SMvObA==
+
 esbuild@^0.17.5:
   version "0.17.15"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.17.15.tgz#209ebc87cb671ffb79574db93494b10ffaf43cbc"
