@@ -1,5 +1,5 @@
 <template>
-    <div  class="card drop-shadow-2xl shadow-2xl border-[1px] border-gray-800 rounded-[14px]  lg:w-auto p-[1px] bg-transparent text-gray-400">
+    <router-link  :to="{ name: 'single-movie', params: {id: movieId } }" class="card drop-shadow-2xl shadow-2xl border-[1px] border-gray-800 rounded-[14px]  lg:w-auto p-[1px] bg-transparent text-gray-400">
         <div class=" bg-transparent rounded-[14px] p-2">
             <div class="lg:flex  justify-between gap-4">
                 <img :src="image" :alt="slug" width="" class="rounded-[14px] lg:w-[120px] w-full">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -58,7 +58,6 @@ export default defineComponent({
     // },
     movieId: {
       type: String,
-      required: true
     },
 
   },
