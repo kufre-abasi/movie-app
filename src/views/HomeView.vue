@@ -70,7 +70,7 @@ const store = useStore();
       </div>
     </div>
   </div>
-      <div class="flex mx-auto center hidden justify-center mb-12">
+      <div v-if="store.showEmptyMovie" class="flex mx-auto center  justify-center mb-12">
         <span>No movie found</span>
       </div>
       <div v-if="store.isloading" class="flex mx-auto center  justify-center mt-10">

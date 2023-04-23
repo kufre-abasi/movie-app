@@ -14,6 +14,7 @@ export const useStore = defineStore({
     movieYear: '',
     movieType: '',
     isloading: false,
+    showEmptyMovie: false
   }),
   actions: {
     async handleSearch() {
@@ -33,6 +34,8 @@ export const useStore = defineStore({
         console.log(this.movies);
         this.hide = this.movies.length === 1;
         this.isloading = false
+        this.showEmptyMovie = this.movies.length === 0
+
       } catch (error) {
         this.isloading = true
         console.error(error);
