@@ -27,7 +27,7 @@ const store = useStore();
         
         <input 
         class=" border-gray-800 border-[2px] bg-gray-900 rounded-md text-[#fff] h-10 w-full p-4 py-5 outline-none " 
-          type="number" 
+          type="text" 
         placeholder="Sort Movie by Year" 
         v-model.trim="store.movieYear" 
         @keyup.enter="store.handleSearch"
