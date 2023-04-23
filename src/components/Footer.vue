@@ -17,7 +17,7 @@ export default {
 		>
 			&copy; {{ copyrightDate }}.
 			<a
-				href="https://github.com/kufre-abasi/hire-me"
+				href="https://github.com/kufre-abasi/movie-app"
 				target="__blank"
 				class="   text-brand  "
 			>
@@ -25,7 +25,7 @@ export default {
 			</a>
 			. Developed by
 			<a
-				href="https://github.com/kufre-abasi/hire-me"
+				href="https://github.com/kufre-abasi"
 				target="__blank"
 				class="  uppercase text-brand  "
 				>{{ author }}</a
