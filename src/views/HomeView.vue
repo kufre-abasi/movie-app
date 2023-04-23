@@ -70,7 +70,7 @@ const store = useStore();
       </div>
       <div 
           v-if="!store.hide"
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-8"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:mx-8 mx-2"
           >
           <MovieCard 
             v-for="movie in store.filteredMovies" 
