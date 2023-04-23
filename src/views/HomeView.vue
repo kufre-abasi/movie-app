@@ -15,10 +15,10 @@ const store = useStore();
     class="mt-16 py-4 mb-6 w-full bg-gray-800 shadow md:block "
   >
     <div class="lg:px-14 px-4 my-0 min-h-[70px] flex items-center">
-      <div class=" flex flex-col items-center md:flex-row w-full">
+      <form class=" flex flex-col gap-4 items-center md:flex-row w-full">
         <div class="mr-4 text-[#fff] whitespace-nowrap">Find a Movie</div>
         <input 
-        class=" border-gray-800 border-[2px] bg-gray-900 rounded-md text-[#fff] h-10 mb-3 md:mb-0 md:mr-3 w-full p-4 py-5 outline-none " 
+        class=" border-gray-800 border-[2px] bg-gray-900 rounded-md text-[#fff] h-10 w-full p-4 py-5 outline-none " 
           type="text" 
         placeholder="search Movie by title" 
         v-model.trim="store.query" 
@@ -26,14 +26,14 @@ const store = useStore();
           >
         
         <input 
-        class=" border-gray-800 border-[2px] bg-gray-900 rounded-md text-[#fff] h-10 mb-3 md:mb-0 md:mr-3 w-full p-4 py-5 outline-none " 
+        class=" border-gray-800 border-[2px] bg-gray-900 rounded-md text-[#fff] h-10 w-full p-4 py-5 outline-none " 
           type="number" 
         placeholder="Sort Movie by Year" 
         v-model.trim="store.movieYear" 
         @keyup.enter="store.handleSearch"
         >
         <select
-          class="w-full h-10 pl-2 text-gray-500 rounded-md bg-gray-900  mb-3 w-full md:mb-0 md:mr-3"
+          class="w-full h-10 pl-2 text-gray-500 rounded-md bg-gray-900 w-full"
            v-model="store.movieType"
           @change="store.handleSearch"
         >
@@ -64,7 +64,10 @@ const store = useStore();
           Search
         </span>
         </button>
-      </div>
+        <button
+          class="flex items-center justify-center appearance-none font-medium text-center rounded-md text-base py-3 lg:py-2 px-6 border-[1px] border-brand text-white w-full lg:w-1/2"
+         type="reset">Reset</button>
+      </form>
     </div>
   </div>
       <div v-if="store.isloading" class="flex mx-auto center  justify-center mt-10">
