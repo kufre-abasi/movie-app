@@ -13,6 +13,8 @@ body{
   /* background-color: #040200; */
   /* background-color: #28231D; */
   @apply bg-gray-900;
+  background-image: url(./image/background.jpg);
+  background-blend-mode: overlay;
   
 }
 .linear_gradient{
